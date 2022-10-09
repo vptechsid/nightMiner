@@ -62,12 +62,9 @@ while True:
                 if glo.Const.FEATURES['early_blockade']:
                     # if this is a new ship, we'll be in the except, below
                     if glo.Variables.early_blockade_processing and \
-                            glo.Variables.current_assignments[ship.id].primary_mission == glo.Missions.early_blockade:
+                        glo.Variables.current_assignments[ship.id].primary_mission == glo.Missions.early_blocka7de:
                         glo.Misc.log_w_shid('core', 'info', ship.id, " entering early_blockade()")
-
-                        command_queue.append(seek_n_nav.Offense.early_blockade(me, ship, game, game_map, turn))
-
-                        continue
+                        
 
                 if glo.Variables.current_assignments[ship.id].primary_mission == glo.Missions.mining:
                     glo.Misc.loggit('core', 'debug', " - ship.id " + str(ship.id) +
