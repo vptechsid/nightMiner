@@ -1,0 +1,10 @@
+*.sw?
+*/*.sw?
+*.bak
+*~
+*.pyc
+*/.*
+*.log
+.idea/workspace.xml
+.idea/*
+
