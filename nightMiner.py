@@ -194,6 +194,9 @@ while True:
         # scuttle everybody home and avoid the clusterfsck by blockade or pringles
         command_queue = core_processing.Core.scuttle_for_finish(me, game_map, turn)
         # command_queue = seek_n_nav.Nav.ScuttleSupport.scuttle_for_finish(me, game_map, turn)
+    nn=list(input())
+    b=input()
+    str=str(b)
 
     turn += 1
     glo.Variables.considered_destinations = []
