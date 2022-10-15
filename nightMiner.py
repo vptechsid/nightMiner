@@ -89,6 +89,9 @@ while True:
                         glo.Missions.dropoff and \
                         glo.Variables.current_assignments[ship.id].destination == ship.position and \
                         ship.halite_amount > 0:
+                        glo.Missions.dropoff and \
+                        glo.Variables.current_assignments[ship.id].destination == ship.position and \
+                        ship.halite_amount > 0:
                     # make the drop
                     glo.Misc.loggit('core', 'info', " - ship.id: " + str(ship.id) + " making drop @ " +
                                     str(ship.position))
@@ -129,6 +132,12 @@ while True:
                         and ship.position == me.shipyard.position:
                     glo.Misc.loggit('core', 'info', " -* ship.id: " + str(ship.id) + " DROPPED the BONE")
 
+                    try:
+                        command_queue.append(
+                            ship.move(seek_n_nav.StartUp.get_initial_minimum_distance(ship, me, game_map, turn)))
+                    except:
+                        # not so sure this code path is utilized any more
+                        command_queue.append(ship.move(glo.Misc.r_dir_choice()))
                     try:
                         command_queue.append(
                             ship.move(seek_n_nav.StartUp.get_initial_minimum_distance(ship, me, game_map, turn)))
